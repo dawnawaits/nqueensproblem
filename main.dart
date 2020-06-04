@@ -19,12 +19,15 @@ class NQueens {
   }
 
   bool _canPlace(int x, int y) {
-    for (int i = 1; i < n; i++) {
-      if (board[i] == y ||
-          (x - y).abs() == (i - board[i]).abs() ||
-          (x + y) == (i + board[i]))
-//         print("$x,$y");
+    for (int i = 1; i <= n; i++) {
+      bool isIntialized = (board[i] != -1);
+      bool rightDiag = isIntialized ? (x + y) == (i + board[i]) : false;
+      bool leftDiag =
+          isIntialized ? (x - y).abs() == (i - board[i]).abs() : false;
+      print("$x,$y, i: $i, board[i]: ${board[i]}, LeftDiag: $leftDiag, RightDiag: $rightDiag");
+      if (board[i] == y || leftDiag || rightDiag) {
         return false;
+      }
     }
     return true;
   }
@@ -40,6 +43,8 @@ class NQueens {
         print("$row, $col");
         solve(row + 1);
       }
+      print("False: $row, $col");
+      board[row] = -1;
     }
 //     solve(row+1);
   }
@@ -47,8 +52,7 @@ class NQueens {
 
 void main() {
   NQueens q = NQueens(4);
-//   print(q.solve());
   q.solve();
-  print(q.board);
-  q.printBoard();
+//   print(q.board);
+//   q.printBoard();
 }
