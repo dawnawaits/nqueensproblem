@@ -16,3 +16,5 @@ Methods:
   Updates board with the solution.
 3. printBoard()
   Prints the solution board with 1 as Queen and 0 for Empty.
+4. isSolved()
+  Checks if the board has been solved. If false is returned after Nqueens.solve(), no solution exists.
