@@ -10,9 +10,12 @@ class NQueens {
       return List<int>.generate(n, (i) => 0);
     });
     for (int i = 0; i < n; i++) {
-      displayBoard[i][board[i + 1] - 1] = 1;
-      print(displayBoard[i]);
+      if (board[i + 1] == -1)
+        print("Line ${i + 1} has error");
+      else
+        displayBoard[i][board[i + 1] - 1] = 1;
     }
+    for (int i = 0; i < n; i++) print(displayBoard[i]);
   }
 
   bool _canPlace(int x, int y) {
