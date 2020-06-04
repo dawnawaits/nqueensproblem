@@ -1,5 +1,7 @@
 # N Queens Problem
-Solving the N Queens problem using Dart. [Still in progress]
+Solving the N Queens problem using Dart.
+
+Refer https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/ for information of the problem and other solutions.
 
 # main.dart
 
