@@ -5,7 +5,16 @@ class NQueens {
   final int n;
   List<int> board;
 
+  bool isSolved() {
+    for (int i = 1; i <= n; i++) if (board[i] == -1) return false;
+    return true;
+  }
+
   void printBoard() {
+    if (!isSolved()) {
+      print("No solution");
+      return;
+    }
     List<List<int>> displayBoard = List<List<int>>.generate(n, (i) {
       return List<int>.generate(n, (i) => 0);
     });
@@ -22,8 +31,7 @@ class NQueens {
     for (int i = 1; i <= n; i++) {
       bool isIntialized = (board[i] != -1);
       bool rightDiag = isIntialized ? (x + y) == (i + board[i]) : false;
-      bool leftDiag =
-          isIntialized ? (x - y) == (i - board[i]) : false;
+      bool leftDiag = isIntialized ? (x - y) == (i - board[i]) : false;
       if (board[i] == y || leftDiag || rightDiag) {
         return false;
       }
@@ -38,8 +46,7 @@ class NQueens {
     for (int col = 1; col <= n; col++) {
       if (_canPlace(row, col)) {
         board[row] = col;
-        if(solve(row + 1))
-          return true;
+        if (solve(row + 1)) return true;
       }
       board[row] = -1;
     }
@@ -48,7 +55,7 @@ class NQueens {
 }
 
 void main() {
-  NQueens q = NQueens(4);
+  NQueens q = NQueens(6);
   q.solve();
   q.printBoard();
 }
