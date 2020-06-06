@@ -1,7 +1,9 @@
 # N Queens Problem
 Solving the N Queens problem using Dart.
 
-Refer https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/ for information of the problem and other solutions.
+You can refer https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/ for information about the problem and other solutions.
+
+Also, shout out to my friend, SamLikesCoding for giving this problem a go. [Here's his code](https://github.com/SamLikesCoding/nQueensDart) in case you wanna check it out.
 
 # main.dart
 
